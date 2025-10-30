@@ -1,0 +1,1 @@
+#!/usr/bin/env python3\nimport http.server, socketserver, os\nfrom pathlib import Path\nPORT=8090\nif __name__=='__main__':\n    os.chdir(Path(__file__).parent)\n    with socketserver.TCPServer(('localhost',PORT), http.server.SimpleHTTPRequestHandler) as httpd:\n        print(f'Running Cursos Watchmaker on http://localhost:{PORT}')\n        httpd.serve_forever()\n
